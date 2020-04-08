@@ -9,7 +9,7 @@ int main()
 {
     Nameless::intArray in{ 10 };
 
-    for (int i = 0; i < 10; i++)
+    for (unsigned i = 0; i < in.Size(); i++)
     {
         in[i] = i;
         std::cout << in[i] << '\n';
@@ -19,20 +19,20 @@ int main()
 
     Nameless::intArray copyTest{ in };
 
-    for (int i = 0; i < 10; i++)
+    for (unsigned i = 0; i < copyTest.Size(); i++)
     {
         std::cout << copyTest[i] << '\n';
     }
 
     std::cout << "\n\n";
 
-    Nameless::intArray assignmentTest{ 15 };
+    Nameless::intArray assignmentTest{ 5 };
 
     std::random_device rd;
     std::mt19937 rng(rd());
     std::uniform_int_distribution<int> distribution(0, 100);
 
-    for (int i = 0; i < 15; i++)
+    for (unsigned i = 0; i < assignmentTest.Size(); i++)
     {
         assignmentTest[i] = distribution(rng);
         std::cout << assignmentTest[i] << '\n';
@@ -42,7 +42,7 @@ int main()
 
     copyTest = assignmentTest;
 
-    for (int i = 0; i < 15; i++)
+    for (unsigned i = 0; i < copyTest.Size(); i++)
     {
         std::cout << copyTest[i] << '\n';
     }
