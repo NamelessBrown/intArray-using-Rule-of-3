@@ -7,6 +7,8 @@ namespace Nameless
 	public:
 		intArray(unsigned size);
 
+		int& operator[](int index);
+
 		~intArray();
 	private:
 		unsigned m_size;
