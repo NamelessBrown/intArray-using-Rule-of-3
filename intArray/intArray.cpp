@@ -27,7 +27,7 @@ Nameless::intArray& Nameless::intArray::operator=(const intArray& in)
 
 	m_size = in.m_size; //sets the size of the newly made arr for the class
 
-	delete m_array;
+	delete[] m_array;
 	m_array = temp;
 
 	return *this;
