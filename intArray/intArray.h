@@ -6,12 +6,15 @@ namespace Nameless
 	{
 	public:
 		intArray(unsigned size);
+		intArray(const intArray& in);
+		intArray operator=(const intArray& in);
 
-		int& operator[](int index);
+		int& operator[](unsigned index);
+		const int& operator[](unsigned index) const;
 
 		~intArray();
 	private:
-		unsigned m_size;
+		unsigned m_size = 0;
 		int* m_array = nullptr;
 	};
 }
