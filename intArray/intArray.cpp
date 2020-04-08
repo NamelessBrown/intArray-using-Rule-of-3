@@ -67,6 +67,15 @@ const int& Nameless::intArray::operator[](unsigned index) const
 	return m_array[index];
 }
 
+void Nameless::intArray::Set(unsigned index, int newNumber)
+{
+	if (index > m_size || index < 0)
+		throw("Invaild size index");
+
+	m_array[index] = newNumber;
+
+}
+
 const unsigned Nameless::intArray::Size() const
 {
 	return m_size;

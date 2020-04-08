@@ -14,6 +14,8 @@ namespace Nameless
 		int& operator[](unsigned index);
 		const int& operator[](unsigned index) const;
 
+		void Set(unsigned index, int newNumber);
+
 		const unsigned Size() const;
 
 		~intArray();
