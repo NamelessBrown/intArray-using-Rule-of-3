@@ -49,6 +49,11 @@ const int& Nameless::intArray::operator[](unsigned index) const
 	return m_array[index];
 }
 
+const unsigned Nameless::intArray::Size() const
+{
+	return m_size;
+}
+
 Nameless::intArray::~intArray()
 {
 	delete[] m_array;

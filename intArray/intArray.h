@@ -12,6 +12,8 @@ namespace Nameless
 		int& operator[](unsigned index);
 		const int& operator[](unsigned index) const;
 
+		const unsigned Size() const;
+
 		~intArray();
 	private:
 		unsigned m_size = 0;
