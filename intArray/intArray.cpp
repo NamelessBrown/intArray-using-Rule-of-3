@@ -16,7 +16,7 @@ Nameless::intArray::intArray(const intArray& in)
 	}
 }
 
-Nameless::intArray Nameless::intArray::operator=(const intArray& in)
+Nameless::intArray& Nameless::intArray::operator=(const intArray& in)
 {
 	auto temp = new int[in.m_size]; //make a temp arr
 
@@ -31,6 +31,24 @@ Nameless::intArray Nameless::intArray::operator=(const intArray& in)
 	m_array = temp;
 
 	return *this;
+}
+
+Nameless::intArray& Nameless::intArray::operator=(intArray&& in) //move assignment constructor
+{
+	delete[] m_array;
+
+	m_array = in.m_array;
+	in.m_array = nullptr;
+
+	return *this;
+}
+
+Nameless::intArray::intArray(intArray&& in) //move constructor
+{
+	m_size = in.m_size;
+	m_array = in.m_array;
+
+	in.m_array = nullptr;
 }
 
 int& Nameless::intArray::operator[](unsigned index)

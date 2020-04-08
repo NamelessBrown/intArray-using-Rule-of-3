@@ -7,7 +7,9 @@ namespace Nameless
 	public:
 		intArray(unsigned size);
 		intArray(const intArray& in);
-		intArray operator=(const intArray& in);
+		intArray(intArray&& in);
+		intArray& operator=(const intArray& in);
+		intArray& operator=(intArray&& in);
 
 		int& operator[](unsigned index);
 		const int& operator[](unsigned index) const;
