@@ -7,45 +7,24 @@
 
 int main()
 {
-    Nameless::intArray in{ 10 };
+    Nameless::intArray test{ 3 };
+    Nameless::intArray moveTest{ 5 };
 
-    for (unsigned i = 0; i < in.Size(); i++)
+    for (unsigned i = 0; i < test.Size(); i++)
     {
-        in[i] = i;
-        std::cout << in[i] << '\n';
-    }
-    
-    std::cout << "\n\n";
-
-    Nameless::intArray copyTest{ in };
-
-    for (unsigned i = 0; i < copyTest.Size(); i++)
-    {
-        std::cout << copyTest[i] << '\n';
+        test[i] = i;
+        std::cout << test[i] << '\n';
     }
 
     std::cout << "\n\n";
 
-    Nameless::intArray assignmentTest{ 5 };
+    moveTest = test;
 
-    std::random_device rd;
-    std::mt19937 rng(rd());
-    std::uniform_int_distribution<int> distribution(0, 100);
-
-    for (unsigned i = 0; i < assignmentTest.Size(); i++)
+    for (unsigned i = 0; i < moveTest.Size(); i++)
     {
-        assignmentTest[i] = distribution(rng);
-        std::cout << assignmentTest[i] << '\n';
+        std::cout << moveTest[i] << '\n';
     }
 
-    std::cout << "\n\n";
-
-    copyTest = assignmentTest;
-
-    for (unsigned i = 0; i < copyTest.Size(); i++)
-    {
-        std::cout << copyTest[i] << '\n';
-    }
 
     std::cin.get();
 }
