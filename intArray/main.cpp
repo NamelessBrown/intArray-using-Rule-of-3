@@ -25,6 +25,13 @@ int main()
         std::cout << moveTest[i] << '\n';
     }
 
+    moveTest.Set(2, 50); //works!
+    std::cout << moveTest[2] << '\n';
+
+    /*
+        moveTest.Set(69, 420); //Throws an error!
+        std::cout << moveTest[69] << '\n'; 
+    */
 
     std::cin.get();
 }
